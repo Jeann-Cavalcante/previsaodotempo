@@ -45,6 +45,7 @@ export default function RootLayout() {
 
 if (__DEV__) {
   reactotronConfig.connect();
+  console.log("Reactotron connected");
 }
 
 function RootLayoutNav() {
