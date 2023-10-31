@@ -4,6 +4,7 @@ import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { TamaguiProvider } from "tamagui";
 import tamaguiConfig from "../../tamagui.config";
+import reactotronConfig from "../config/reactotron";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -40,6 +41,10 @@ export default function RootLayout() {
   }
 
   return <RootLayoutNav />;
+}
+
+if (__DEV__) {
+  reactotronConfig.connect();
 }
 
 function RootLayoutNav() {
