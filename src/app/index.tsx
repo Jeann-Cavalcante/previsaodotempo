@@ -50,12 +50,11 @@ const Page = () => {
   const getGeocode = async () => {
     try {
       const response = await axios.get(
-        "https://geocodeapi.p.rapidapi.com/GetNearestCities",
+        process.env.EXPO_PUBLIC_URL_GEOCODE! + "GetNearestCities",
         {
           headers: {
-            "X-RapidAPI-Key":
-              "a03abd33c7mshd1c310af69dea8fp178102jsna30600aed722",
-            "X-RapidAPI-Host": "geocodeapi.p.rapidapi.com",
+            "X-RapidAPI-Key": process.env.EXPO_PUBLIC_KEY,
+            "X-RapidAPI-Host": process.env.EXPO_PUBLIC_HOST_GEOCODE,
           },
           params: {
             latitude: location.coords.latitude,
